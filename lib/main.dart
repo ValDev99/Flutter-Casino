@@ -1,20 +1,24 @@
 import 'package:flutter/material.dart';
+import 'bandit.dart';
 
 void main() {
-  runApp(const Casino());
+  runApp(const MyApp());
 }
 
-class Casino extends StatefulWidget {
-  const Casino({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
-  @override
-  State<Casino> createState() => _CasinoState();
-}
-
-class _CasinoState extends State<Casino> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return MaterialApp(
+      title: 'Casino',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.yellow.shade700),
+        useMaterial3: true,
+      ),
+      home: const Casino(title: 'Casino'),
+    );
   }
 }
 
